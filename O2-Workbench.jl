@@ -9,7 +9,7 @@ function traverse_recursive_max(node, start_value)
     if (node.value > highest_value)
         highest_value = node.value
     end
-    if node.next == nothing
+    if node.next == nothing ## We are at the last node. Return to base!
         return highest_value
     end
     traverse_recursive_max(node.next,highest_value)
@@ -22,7 +22,7 @@ function traverse_normal_max(node)
     while true
         if currentNode.next != nothing
             currentNode = currentNode.next
-        else
+        else ## We are at the last node. Return to base!
             return highest_value
         end
         if currentNode.value > highest_value
