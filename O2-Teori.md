@@ -20,7 +20,7 @@
     - [Oppgave 15. Hashfunksjon](#oppgave-15-hashfunksjon)
     - [Oppgave 16. Kjedet hashtabell](#oppgave-16-kjedet-hashtabell)
     - [Oppgave 17. Kjedet hashtabell](#oppgave-17-kjedet-hashtabell)
-    - [Oppgave 18. Amorisert analyse](#oppgave-18-amorisert-analyse)
+    - [Oppgave 18. Amortisert analyse](#oppgave-18-amortisert-analyse)
     - [Oppgave 19. Binærtre](#oppgave-19-binærtre)
     - [Oppgave 20. Amortisert analyse](#oppgave-20-amortisert-analyse)
 
@@ -31,8 +31,6 @@
 **Dequeue** => Fjerner Hodet. (flytter peker ett steg bak i køen)
 
 **Sentinels** => Dummy object with pointer to the first and last node. All nodes, where their pointers are Nil, gets pointed to the sentinel. Therefore, the last node will point back to the start of the list.
-
-
 
 ## Oppgave 1.
 
@@ -262,10 +260,10 @@ Hva er worst-case kjøretiden for innsetting in en hashtabell om man bruker kjed
 
 Svar: `O(n)`
 
-## Oppgave 18. Amorisert analyse
+## Oppgave 18. Amortisert analyse
 
 For å unngå at vi lager for stor initiell hashtabell ønsker vi å doble størrelsen på hastabellen hvor gang lastfaktoren bilr 1/4.
-Hvis vi benytter Amorisert analyse får vi at kjøretiden for innsetting er...
+Hvis vi benytter Amortisert analyse får vi at kjøretiden for innsetting er...
 
 Svar: O(1).
 
