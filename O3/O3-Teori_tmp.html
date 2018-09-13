@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>O3-Teori.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<h1 id="%C3%B8ving-3-teori-splitt-og-hersk">Øving 3, teori: Splitt og hersk</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#%C3%B8ving-3-teori-splitt-og-hersk">Øving 3, teori: Splitt og hersk</a>
+<ul>
+<li><a href="#question-1-sorteringsalgoritmer">Question 1: Sorteringsalgoritmer</a></li>
+<li><a href="#question-2-sorteringsalgoritmer">Question 2: Sorteringsalgoritmer</a></li>
+<li><a href="#question-3-sorteringsalgoritmer">Question 3: Sorteringsalgoritmer</a></li>
+<li><a href="#question-4-sorteringsalgoritmer">Question 4: Sorteringsalgoritmer</a></li>
+<li><a href="#question-5-sorteringsalgoritmer">Question 5: Sorteringsalgoritmer</a></li>
+<li><a href="#question-6-substitusjonsmetoden">Question 6: Substitusjonsmetoden</a></li>
+<li><a href="#question-7-master-teoremet">Question 7: Master-teoremet</a></li>
+<li><a href="#question-8-master-teoremet">Question 8: Master-teoremet</a></li>
+<li><a href="#question-9-master-teoremet">Question 9: Master-teoremet</a></li>
+<li><a href="#question-10-rekursjonstr%C3%A6r">Question 10: Rekursjonstrær</a></li>
+<li><a href="#question-11-variabelskifte">Question 11: Variabelskifte</a></li>
+<li><a href="#question-12-kj%C3%B8retidsanalyse">Question 12: Kjøretidsanalyse</a></li>
+<li><a href="#question-13-kj%C3%B8retidsanalyse">Question 13: Kjøretidsanalyse</a></li>
+<li><a href="#question-14-kj%C3%B8retidsanalyse">Question 14: Kjøretidsanalyse</a></li>
+<li><a href="#question-15-kj%C3%B8retidsanalyse">Question 15: Kjøretidsanalyse</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<hr>
+<h2 id="question-1-sorteringsalgoritmer">Question 1: Sorteringsalgoritmer</h2>
+<p>Vi har en usortert liste med n elementer, og vi ønsker å finne ut hvor mange unike tall det er i listen. Etter algoritmene vi har lært til og med forelesningen om splitt og hersk, hva er den raskeste kjøretiden vi kan garantere for dette problemet (den beste worst-case kjøretiden)?</p>
+<ul>
+<li><input type="checkbox" id="checkbox0"><label for="checkbox0">$Θ(log logn)$</label></li>
+<li><input type="checkbox" id="checkbox1"><label for="checkbox1">$Θ(n−−√)$</label></li>
+<li>[?] $Θ(n)$</li>
+<li><input type="checkbox" id="checkbox2" checked="true"><label for="checkbox2">$Θ(nlogn)$</label></li>
+<li><input type="checkbox" id="checkbox3"><label for="checkbox3">$Θ(logn)$</label></li>
+<li><input type="checkbox" id="checkbox4"><label for="checkbox4">$Θ(n2)$</label></li>
+<li><input type="checkbox" id="checkbox5"><label for="checkbox5">$Θ(nn−−√)$</label></li>
+<li><input type="checkbox" id="checkbox6"><label for="checkbox6">Ingen av alternativene stemmer</label></li>
+</ul>
+<p><code>Siden listen er usortert/vi skal finne ut hvor mange unike tall det er i listen, saa maa man traversere gjennom hele listen. Man trenger dog ikke aa sortere listen, MEN dersom det er tenkt at listen ogsaa skal sorteres saa blir det O(n log n)</code></p>
+<h2 id="question-2-sorteringsalgoritmer">Question 2: Sorteringsalgoritmer</h2>
+<p>Denne oppgaven handler om quicksort og mergesort. Med “sorteringsarbeid” menes her den faktiske flyttingen av tall som en sorteringsalgoritme gjør. Hvilket av følgende alternativ er sant?</p>
+<ul>
+<li><input type="checkbox" id="checkbox7"><label for="checkbox7">Begge algoritmene gjør sorteringsarbeidet etter det rekursive kallet</label></li>
+<li><input type="checkbox" id="checkbox8"><label for="checkbox8">Begge algoritmene gjør sorteringsarbeidet før det rekursive kallet</label></li>
+<li><input type="checkbox" id="checkbox9"><label for="checkbox9">Mergesort gjør sorteringsarbeidet før det rekursive kallet, mens quicksort gjør det etterpå</label></li>
+<li><input type="checkbox" id="checkbox10" checked="true"><label for="checkbox10">Quicksort gjør sorteringsarbeidet før det rekursive kallet, mens mergesort gjør det etterpå</label></li>
+</ul>
+<h2 id="question-3-sorteringsalgoritmer">Question 3: Sorteringsalgoritmer</h2>
+<p>La liste A være en liste sortert i stigende rekkefølge, og B en liste sortert i synkende rekkefølge. Hvilken påstand stemmer da om kjøretiden til Quicksort?</p>
+<ul>
+<li><input type="checkbox" id="checkbox11" checked="true"><label for="checkbox11">Begge har kjøretid $Θ(n^2)$</label></li>
+<li><input type="checkbox" id="checkbox12"><label for="checkbox12">Kjøretid for liste B er $Θ(n^2)$ og for liste A er kjøretiden $Θ(nlogn)$</label></li>
+<li><input type="checkbox" id="checkbox13"><label for="checkbox13">Kjøretid for liste A er $Θ(n^2)$ og for liste B er kjøretiden $Θ(nlogn)$</label></li>
+<li><input type="checkbox" id="checkbox14"><label for="checkbox14">Begge har kjøretid $Θ(nlogn)$</label></li>
+</ul>
+<h2 id="question-4-sorteringsalgoritmer">Question 4: Sorteringsalgoritmer</h2>
+<p>Hvilken av algoritmene forbruker mest ekstra minne i average case?</p>
+<ul>
+<li><input type="checkbox" id="checkbox15"><label for="checkbox15">Quicksort</label></li>
+<li><input type="checkbox" id="checkbox16" checked="true"><label for="checkbox16">Merge sort</label></li>
+</ul>
+<h2 id="question-5-sorteringsalgoritmer">Question 5: Sorteringsalgoritmer</h2>
+<p>All input kan gi worst-case kjøretid for randomized-quicksort</p>
+<ul>
+<li><input type="checkbox" id="checkbox17"><label for="checkbox17">Usant</label></li>
+<li><input type="checkbox" id="checkbox18" checked="true"><label for="checkbox18">Sant</label></li>
+</ul>
+<h2 id="question-6-substitusjonsmetoden">Question 6: Substitusjonsmetoden</h2>
+<p>Du ønsker å teste om kjøretiden til fire ulike, rekursive algoritmer er O(n2) ved hjelp av substitusjonsmetoden. Først setter du opp rekurrenser for algoritmene, og så forutsetter du for hver av dem den induktive hypotesen at T(n)≤c⋅n2. Etter å ha gjennomført substitusjonsmetoden for hver av rekurrensene får du resultatene</p>
+<ul>
+<li>$T1(n)≤c⋅n2−5n$</li>
+<li>$T2(n)≤c⋅n2+5n$</li>
+<li>$T3(n)≤c⋅n2+1$</li>
+<li>$T4(n)≤c⋅n2−1$</li>
+</ul>
+<p>Hvilke(n) av algoritmene har du greid å bevise at har kjøretid O(n2)? Anta at grunntilfellene i den matematiske induksjonen også stemmer.</p>
+<ul>
+<li><input type="checkbox" id="checkbox19"><label for="checkbox19">T2</label></li>
+<li><input type="checkbox" id="checkbox20"><label for="checkbox20">T1</label></li>
+<li><input type="checkbox" id="checkbox21"><label for="checkbox21">T3</label></li>
+<li><input type="checkbox" id="checkbox22"><label for="checkbox22">T4</label></li>
+</ul>
+<h2 id="question-7-master-teoremet">Question 7: Master-teoremet</h2>
+<p>La T(n)=27⋅T(n/3)+n3. Hvilket tilfelle tilhører rekurrensen når du benytter master-teoremet?</p>
+<ul>
+<li><input type="checkbox" id="checkbox23"><label for="checkbox23">Case 1</label></li>
+<li><input type="checkbox" id="checkbox24"><label for="checkbox24">Ingen av dem</label></li>
+<li><input type="checkbox" id="checkbox25"><label for="checkbox25">Case 2</label></li>
+<li><input type="checkbox" id="checkbox26"><label for="checkbox26">Case 3</label></li>
+</ul>
+<h2 id="question-8-master-teoremet">Question 8: Master-teoremet</h2>
+<p>La T(n)=27⋅T(n/3)+n3. Hva blir kjøretiden?</p>
+<p>Θ(n4)</p>
+<p>Θ(n3logn)</p>
+<p>Θ(n4logn)</p>
+<p>Θ(n3)</p>
+<h2 id="question-9-master-teoremet">Question 9: Master-teoremet</h2>
+<p>La T(n)=4⋅T(n/2)+n3. Hva blir kjøretiden?</p>
+<p>Θ(n2)</p>
+<p>Θ(n3)</p>
+<p>Θ(n4)</p>
+<p>Θ(n3logn)</p>
+<h2 id="question-10-rekursjonstr%C3%A6r">Question 10: Rekursjonstrær</h2>
+<p>La T(n)=T(n/3)+T(n/2)+T(n−1)+1 der T(1)=1. Hva blir høyden til rekursjonstreet?</p>
+<p>Θ(n2)</p>
+<p>Θ(n)</p>
+<p>Θ(logn)</p>
+<p>Θ(nlogn)</p>
+<h2 id="question-11-variabelskifte">Question 11: Variabelskifte</h2>
+<p>Løs rekurensen gitt ved T(n)=T(n−−√)+n ved hjelp av variabelskifte. Hva blir kjøretiden?</p>
+<p>Hint: n−−√ er det samme som n12.</p>
+<p>Θ(loglogn)</p>
+<p>Θ(logn)</p>
+<p>Θ(n)</p>
+<p>Θ(nlogn)</p>
+<h2 id="question-12-kj%C3%B8retidsanalyse">Question 12: Kjøretidsanalyse</h2>
+<p>Funksjonen gjoerNoe(n) under har kjøretid Θ(n). Hva blir kjøretiden til funksjonen f1(n)?</p>
+<p>Hint: Sett opp to rekurrenser T1(n) og T2(n) og finn først en løsning på lukket form for T1(n).</p>
+<p>function f1(n)
+gjoerNoe(n)
+if n &gt; 1
+f1(n / 2)
+f2(n - 2)
+end
+end</p>
+<p>function f2(n)
+gjoerNoe(n)
+if n &gt; 1
+f1(n / 2)
+end
+end</p>
+<p>Θ(logn)</p>
+<p>Θ(n2)</p>
+<p>Θ(n)</p>
+<p>Θ(nlogn)</p>
+<h2 id="question-13-kj%C3%B8retidsanalyse">Question 13: Kjøretidsanalyse</h2>
+<p>Hva blir kjøretiden til funksjonen f3(n)?</p>
+<p>function f3(n)
+if n &gt; 42
+f3(n - 42)
+f3(42)
+end
+end</p>
+<p>O(nlogn)</p>
+<p>O(1)</p>
+<p>Den vil aldri stoppe</p>
+<p>O(n)</p>
+<p>O(logn)</p>
+<h2 id="question-14-kj%C3%B8retidsanalyse">Question 14: Kjøretidsanalyse</h2>
+<p>Hva blir kjøretiden til funksjonen f4(n)? println tar konstant tid.</p>
+<p>function f4(n)
+for i in 1:n
+println(&quot;Algdat ruler!&quot;)
+end</p>
+<pre><code>if n &gt; 1
+    f4(3/4* n)
+    f4(1/4* n)
+end
+</code></pre>
+<p>end</p>
+<p>O(1)</p>
+<p>O(n)</p>
+<p>O(nlogn)</p>
+<p>O(n2)</p>
+<p>O(logn)</p>
+<h2 id="question-15-kj%C3%B8retidsanalyse">Question 15: Kjøretidsanalyse</h2>
+<p>Funksjonen gjoerNoeAnnet(n) under har kjøretid Θ(n2). Hva blir kjøretiden til funksjonen f5(n)?</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">function</span> f5(n)
+    gjoerNoeAnnet(n/<span class="hljs-number">6</span>)
+
+    <span class="hljs-keyword">if</span> n &gt; <span class="hljs-number">1</span>
+        f5(n/<span class="hljs-number">2</span> - <span class="hljs-number">2</span>)
+        f5(n/<span class="hljs-number">2</span> - <span class="hljs-number">3</span>)
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<p>O(nlogn)</p>
+<p>O(n)</p>
+<p>O(n2logn)</p>
+<p>O(n2)</p>
+<p>O(logn)</p>
+
+</body>
+</html>
