@@ -7,10 +7,10 @@ Henry.
 
 ## Vim setup with quick execution of code
 ### Syntax highlighting ++
-Install this plugin for syntax-highlighting
+Install this plugin for syntax-highlighting (follow steps under)
 https://github.com/JuliaEditorSupport/julia-vim
 
-Copy (or symlink) the contents of this repository into the vim application support directory:
+Copy (or symlink) the contents of the plugin repo into the vim application support directory:
 ``` bash
 git clone git://github.com/JuliaEditorSupport/julia-vim.git
 cd julia-vim
@@ -23,5 +23,5 @@ Julia should appear as a file type and be automatically detected for files with 
 Add this to your .vimrc
 ```
  " Mapping <F9> to run julia program
-autocmd FileType julia nnoremap <buffer> <F9> :exec '!julia' she    llescape(@%, 1)<cr>
+autocmd FileType julia nnoremap <buffer> <F9> :exec '!julia' shellescape(@%, 1)<cr>
 ```
