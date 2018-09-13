@@ -28,7 +28,7 @@ Vi har en usortert liste med n elementer, og vi ønsker å finne ut hvor mange u
 
 - [ ] $Θ(log logn)$
 - [ ] $Θ(n−−√)$
-- [?] $Θ(n)$
+- [ ] $Θ(n)$
 - [x] $Θ(nlogn)$
 - [ ] $Θ(logn)$
 - [ ] $Θ(n2)$
@@ -47,10 +47,10 @@ Denne oppgaven handler om quicksort og mergesort. Med “sorteringsarbeid” men
 
 ## Question 3: Sorteringsalgoritmer
 La liste A være en liste sortert i stigende rekkefølge, og B en liste sortert i synkende rekkefølge. Hvilken påstand stemmer da om kjøretiden til Quicksort?
-- [x] Begge har kjøretid $Θ(n^2)$
+- [x] Begge har kjøretid $Θ(n^2)$ *My best guess!
 - [ ] Kjøretid for liste B er $Θ(n^2)$ og for liste A er kjøretiden $Θ(nlogn)$
 - [ ] Kjøretid for liste A er $Θ(n^2)$ og for liste B er kjøretiden $Θ(nlogn)$
-- [ ] Begge har kjøretid $Θ(nlogn)$
+- [ ] Begge har kjøretid $Θ(nlogn)$ *Iallefall ikke denne.
 
 ## Question 4: Sorteringsalgoritmer
 Hvilken av algoritmene forbruker mest ekstra minne i average case?
@@ -71,15 +71,15 @@ Du ønsker å teste om kjøretiden til fire ulike, rekursive algoritmer er O(n2)
 
 Hvilke(n) av algoritmene har du greid å bevise at har kjøretid O(n2)? Anta at grunntilfellene i den matematiske induksjonen også stemmer.
 - [ ] T2
-- [ ] T1
+- [x ] T1
 - [ ] T3
-- [ ] T4
+- [x] T4
 
 ## Question 7: Master-teoremet
 La T(n)=27⋅T(n/3)+n3. Hvilket tilfelle tilhører rekurrensen når du benytter master-teoremet?
 - [ ] Case 1
 - [ ] Ingen av dem
-- [ ] Case 2
+- [x] Case 2 *best guess
 - [ ] Case 3
 
 ## Question 8: Master-teoremet
@@ -87,36 +87,34 @@ La T(n)=27⋅T(n/3)+n3. Hva blir kjøretiden?
 - [ ] Θ(n4)
 - [ ] Θ(n3logn)
 - [ ] Θ(n4logn)
-- [ ] Θ(n3)
+- [x] $Θ(n^3)$ *Obs! Feil!
 
 ## Question 9: Master-teoremet
 La T(n)=4⋅T(n/2)+n3. Hva blir kjøretiden?
 - [ ] Θ(n2)
-- [ ] Θ(n3)
+- [x] Θ(n3)
 - [ ] Θ(n4)
 - [ ] Θ(n3logn)
 
 ## Question 10: Rekursjonstrær
 La T(n)=T(n/3)+T(n/2)+T(n−1)+1 der T(1)=1. Hva blir høyden til rekursjonstreet?
 - [ ] Θ(n2)
-- [ ] Θ(n)
+- [x] Θ(n)
 - [ ] Θ(logn)
 - [ ] Θ(nlogn)
 
 ## Question 11: Variabelskifte
 Løs rekurensen gitt ved T(n)=T(n−−√)+n ved hjelp av variabelskifte. Hva blir kjøretiden?
 
-
 Hint: n−−√ er det samme som n12.
 
 - [ ] Θ(loglogn)
 - [ ] Θ(logn)
-- [ ] Θ(n)
+- [x] Θ(n)
 - [ ] Θ(nlogn)
 
 ## Question 12: Kjøretidsanalyse
 Funksjonen gjoerNoe(n) under har kjøretid Θ(n). Hva blir kjøretiden til funksjonen f1(n)?
-
 
 Hint: Sett opp to rekurrenser T1(n) og T2(n) og finn først en løsning på lukket form for T1(n).
 
@@ -141,7 +139,7 @@ end
 - [ ] Θ(logn)
 - [ ] Θ(n2)
 - [ ] Θ(n)
-- [ ] Θ(nlogn)
+- [x] Θ(nlogn)
 
 ## Question 13: Kjøretidsanalyse
 Hva blir kjøretiden til funksjonen f3(n)?
@@ -157,7 +155,7 @@ end
 - [ ] O(nlogn)
 - [ ] O(1)
 - [ ] Den vil aldri stoppe
-- [ ] O(n)
+- [x] O(n)
 - [ ] O(logn)
 
 ## Question 14: Kjøretidsanalyse
@@ -176,7 +174,7 @@ end
 ```
 - [ ] O(1)
 - [ ] O(n)
-- [ ] O(nlogn)
+- [x] O(nlogn)
 - [ ] O(n2)
 - [ ] O(logn)
 
@@ -197,5 +195,5 @@ end
 - [ ] O(nlogn)
 - [ ] O(n)
 - [ ] O(n2logn)
-- [ ] O(n2)
+- [x] O(n2)
 - [ ] O(logn)
