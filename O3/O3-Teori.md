@@ -47,10 +47,10 @@ Denne oppgaven handler om quicksort og mergesort. Med “sorteringsarbeid” men
 
 ## Question 3: Sorteringsalgoritmer
 La liste A være en liste sortert i stigende rekkefølge, og B en liste sortert i synkende rekkefølge. Hvilken påstand stemmer da om kjøretiden til Quicksort?
-- [x] Begge har kjøretid $Θ(n^2)$
+- [x] Begge har kjøretid $Θ(n^2)$ *My best guess!
 - [ ] Kjøretid for liste B er $Θ(n^2)$ og for liste A er kjøretiden $Θ(nlogn)$
 - [ ] Kjøretid for liste A er $Θ(n^2)$ og for liste B er kjøretiden $Θ(nlogn)$
-- [ ] Begge har kjøretid $Θ(nlogn)$
+- [ ] Begge har kjøretid $Θ(nlogn)$ *Iallefall ikke denne.
 
 ## Question 4: Sorteringsalgoritmer
 Hvilken av algoritmene forbruker mest ekstra minne i average case?
@@ -71,23 +71,23 @@ Du ønsker å teste om kjøretiden til fire ulike, rekursive algoritmer er O(n2)
 
 Hvilke(n) av algoritmene har du greid å bevise at har kjøretid O(n2)? Anta at grunntilfellene i den matematiske induksjonen også stemmer.
 - [ ] T2
-- [ ] T1 *!!
-- [x] T3
-- [x] T4 *!!
+- [x ] T1
+- [ ] T3
+- [x] T4
 
 ## Question 7: Master-teoremet
 La T(n)=27⋅T(n/3)+n3. Hvilket tilfelle tilhører rekurrensen når du benytter master-teoremet?
 - [ ] Case 1
 - [ ] Ingen av dem
-- [ ] Case 2 *!!
-- [x] Case 3
+- [x] Case 2 *best guess
+- [ ] Case 3
 
 ## Question 8: Master-teoremet
 La T(n)=27⋅T(n/3)+n3. Hva blir kjøretiden?
 - [ ] Θ(n4)
 - [ ] Θ(n3logn)
 - [ ] Θ(n4logn)
-- [x] $Θ(n^3)$
+- [x] $Θ(n^3)$ *Obs! Feil!
 
 ## Question 9: Master-teoremet
 La T(n)=4⋅T(n/2)+n3. Hva blir kjøretiden?
