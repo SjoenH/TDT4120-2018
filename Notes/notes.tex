@@ -1,0 +1,109 @@
+\documentclass{article}
+    % \usepackage{biber}
+    \usepackage{listings}
+    \usepackage{qtree}
+        
+\author{Henry S. Sjoen}
+\title{TDT4120 \\ Fall 2018}
+
+\begin{document}
+%.root left right 
+\Tree[.Top 
+    [ .Left   
+        [.Left   Left  Right ] 
+        [.Right  Left  Right ]
+    ]  
+    [ .Right   
+        [.Left   Left  Right ] 
+        [.Right  Left  Right ]
+    ]
+]
+
+\maketitle
+\tableofcontents
+\section{Algorithm Design}
+
+
+\subsection{Divide and Conquer}
+Divide and Conquer is an Algorithm design paradigm based on multi-branch recursion. A divide and conquer algorithm works by recursively breaking down a problem into two or more sub-problems of the same or related type, until these become simple enough to be solved directly. The solutions to the sub-problems are then combined to give a solution to the original problem.
+% \cite{wikiDivide}
+
+\section{Loose Recurrences}
+\subsection{The Master-Theorem}
+% https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)
+
+Generic form 
+$T(n)=a T(\frac{n}{b})+f(n)$
+
+\subsection{Recursion Trees}
+$T(n)=4T(\frac{n}{2})+n^2$
+
+%.root left right 
+\Tree[.$n^2$ 
+    [ .$(\frac{n}{2})^2$   
+        [.$(\frac{n}{4})^2$  $(\frac{n}{8})^2$  $(\frac{n}{8})^2$ ] 
+        [.$(\frac{n}{4})^2$  $(\frac{n}{8})^2$  $(\frac{n}{8})^2$ ]
+    ]
+    [ .$(\frac{n}{2})^2$   
+        [.$(\frac{n}{4})^2$  $(\frac{n}{8})^2$  $(\frac{n}{8})^2$ ] 
+        [.$(\frac{n}{4})^2$  $(\frac{n}{8})^2$  $(\frac{n}{8})^2$ ]
+        ]
+    ]
+
+% $(n\frac{n}{8}^2$
+\begin{lstlisting}
+This is supposed to be a tree...
+
+n^2
+-(n/2)^2
+--(n/4)^2
+--(n/4)^2
+--(n/4)^2
+--(n/4)^2
+-(n/2)^2
+--(n/4)^2
+--(n/4)^2
+--(n/4)^2
+--(n/4)^2
+-(n/2)^2
+--(n/4)^2
+--(n/4)^2
+--(n/4)^2
+--(n/4)^2
+-(n/2)^2
+--(n/4)^2
+--(n/4)^2
+--(n/4)^2
+--(n/4)^2
+\end{lstlisting}
+
+\subsection{Variable-switching}
+$T(n) = 2T(\sqrt{n})+\log n$
+
+
+\section{Sorting Algorithms}
+\subsection{Mergesort}
+$\theta(n \log n)$
+
+\subsection{Quicksort}
+Howto:
+
+\begin{lstlisting}[caption=Julia example]
+    function traverse_recursive_max(node, start_value)
+        highest_value = start_value
+        if (node.value > highest_value)
+            highest_value = node.value
+        end
+        if node.next == nothing
+            return highest_value
+        end
+        traverse_recursive_max(node.next,highest_value)
+    end
+    
+    traversemax(node) = traverse_recursive_max(node,node.value)
+\end{lstlisting}
+
+
+\section{Code example overview}
+\lstlistoflistings
+\end{document}
