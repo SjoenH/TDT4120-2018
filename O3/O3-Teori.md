@@ -71,25 +71,15 @@ Du ønsker å teste om kjøretiden til fire ulike, rekursive algoritmer er O(n2)
 
 Hvilke(n) av algoritmene har du greid å bevise at har kjøretid O(n2)? Anta at grunntilfellene i den matematiske induksjonen også stemmer.
 - [ ] T2
-<<<<<<< HEAD
 - [ ] T1 *!!
 - [x] T3
 - [x] T4 *!!
-=======
-- [ ] T1
-- [x] T3
-- [x] T4
->>>>>>> 35f40334057bedd3822933bc5406d31dc63964c3
 
 ## Question 7: Master-teoremet
 La T(n)=27⋅T(n/3)+n3. Hvilket tilfelle tilhører rekurrensen når du benytter master-teoremet?
 - [ ] Case 1
 - [ ] Ingen av dem
-<<<<<<< HEAD
 - [ ] Case 2 *!!
-=======
-- [ ] Case 2
->>>>>>> 35f40334057bedd3822933bc5406d31dc63964c3
 - [x] Case 3
 
 ## Question 8: Master-teoremet
@@ -97,11 +87,7 @@ La T(n)=27⋅T(n/3)+n3. Hva blir kjøretiden?
 - [ ] Θ(n4)
 - [ ] Θ(n3logn)
 - [ ] Θ(n4logn)
-<<<<<<< HEAD
 - [x] $Θ(n^3)$
-=======
-- [x] Θ(n3)
->>>>>>> 35f40334057bedd3822933bc5406d31dc63964c3
 
 ## Question 9: Master-teoremet
 La T(n)=4⋅T(n/2)+n3. Hva blir kjøretiden?
@@ -209,9 +195,5 @@ end
 - [ ] O(nlogn)
 - [ ] O(n)
 - [ ] O(n2logn)
-<<<<<<< HEAD
 - [x] O(n2)
-=======
-- [ ] O(n2)
->>>>>>> 35f40334057bedd3822933bc5406d31dc63964c3
 - [ ] O(logn)
